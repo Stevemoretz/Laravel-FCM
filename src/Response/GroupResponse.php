@@ -73,7 +73,7 @@ class GroupResponse extends BaseResponse implements GroupResponseContract
      */
     protected function logResponse()
     {
-        $logMessage = "notification send to group: $this->to";
+        $logMessage = "notification send to group: " . is_array($this->to) ? implode(',',$this->to) : $this->to;
         $logMessage .= "with $this->numberTokensSuccess success and $this->numberTokensFailure";
 
         $this->logger->info($logMessage);

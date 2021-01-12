@@ -262,10 +262,12 @@ class PayloadNotificationBuilder
      * Indicates the action associated with a user click on the notification.
      *
      * @param string $action
+     * @param string $title Only For Web
+     * @param string $icon Only For Web
      *
      * @return PayloadNotificationBuilder current instance of the builder
      */
-    public function setClickAction($action)
+    public function setClickAction($action,$title = null,$icon = null)
     {
         $this->clickAction = $action;
 
